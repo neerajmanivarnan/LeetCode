@@ -2,7 +2,7 @@ public class CERecursion {
     
 }
 
-class Solution {
+class Solution3 {
     public int[] findIntersectionValues(int[] nums1, int[] nums2) {
             int n = nums1.length;
             int m = nums2.length;
