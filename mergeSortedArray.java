@@ -22,12 +22,24 @@ class Solution {
         for(int i=m ,j=0;i<nums1.length;i++,j++){
             nums1[i] = nums2[j];
         }
-    }
 
-    for(int i=0;i<nums1.length;i++){
-        for(int j=0;j){
 
+        int key;
+        int j;
+    for(int i=1;i<nums1.length;i++){
+        j=i-1;
+        key = nums1[i];
+        while(j>=0 && nums1[j]>key){
+            nums1[j+1] = nums1[j];
+            j = j-1;
         }
+        nums1[j+1] = key;
     }
+    }
+
+    
+
+   
+
 
 }
