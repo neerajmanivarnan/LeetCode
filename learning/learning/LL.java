@@ -104,6 +104,7 @@ public class LL{
         size-=1;
     }
 
+ LLNew
     public boolean NotcontainsEl(int val){
         Node current = head;
         while(current != null){
@@ -151,6 +152,8 @@ public class LL{
       
     }
 
+
+master
     public void deleteLast(){
         Node current = head;
         if(tail == null){

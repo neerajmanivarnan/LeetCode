@@ -6,6 +6,7 @@ public class Main {
         public static void main(String[] args) {
             LL newList = new LL();
 
+
             newList.insertFirst(20);
             newList.insertFirst(39);
             newList.insertFirst(40);
@@ -25,6 +26,9 @@ public class Main {
 
 
 
-            
+
+
+            newList.display();
+
         }
 }
