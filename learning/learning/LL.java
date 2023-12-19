@@ -104,6 +104,56 @@ public class LL{
         size-=1;
     }
 
+ LLNew
+    public boolean NotcontainsEl(int val){
+        Node current = head;
+        while(current != null){
+            if(current.val == val){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void removeElements1(int val){
+        Node current = head;
+        Node temp1=current;
+        Node temp=null;
+        int flag = 0;
+        while(current!=null){
+            flag = 0;
+            if(current.val == val){
+                temp = current.next;
+                temp1.next = temp;
+                current = temp;
+                flag = 1;
+            }
+            if(flag == 0){
+                temp1 = temp1.next;
+                current = current.next;
+            }
+        }
+    }
+
+    public void deleteAfter(int val){
+        Node current = head;
+        boolean newVal ;
+        
+        while(true){
+            newVal = NotcontainsEl(val);
+            if(newVal == true){
+                System.out.println("element rmians");
+                break;
+            }else{
+                removeElements1(val);
+            }
+        }
+
+      
+    }
+
+
+master
     public void deleteLast(){
         Node current = head;
         if(tail == null){

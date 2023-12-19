@@ -6,30 +6,29 @@ public class Main {
         public static void main(String[] args) {
             LL newList = new LL();
 
-            newList.insertFirst(10);
+
             newList.insertFirst(20);
-            newList.insertFirst(30);
+            newList.insertFirst(39);
             newList.insertFirst(40);
+            newList.insertFirst(50);
+            
             newList.insertFirst(40);
+
+            //newList.NotcontainsEl(40);
 
             newList.display();
 
-            System.out.println("after insert");
+            newList.removeElements1(40);
 
-            newList.insertAfter(70, 30);
+            newList.display();
 
             
 
 
 
-            newList.display();
 
-            newList.deleteFirst();
 
             newList.display();
 
-            newList.deleteLast();
-
-            newList.display();
         }
 }
