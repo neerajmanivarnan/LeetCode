@@ -11,13 +11,17 @@ class greaterThanZeroException extends Exception{
  class Solution {
 
     public static void main(String[] args) {
+        int num=0;
+        Scanner sc = new Scanner(System.in);
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
         try{
-            Scanner sc = new Scanner(System.in);
-            int num = sc.nextInt();
+            
+             num = sc.nextInt();
             if(num>100){
                 throw new greaterThanZeroException("The number is greater than 100");
             }
+        }catch(Exception e){
+
         }
         int[] arr = new int[num];
 
