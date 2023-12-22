@@ -2,7 +2,7 @@ public class CERecursion1 {
     
 }
 
-class Solution2 {
+class Solution2{
     public int[] findIntersectionValues(int[] nums1, int[] nums2) {
             int n = nums1.length;
             int m = nums2.length;
@@ -12,11 +12,11 @@ class Solution2 {
 
             boolean newVal = false;
 
-            caller2(nums1, nums2, 0, 0)
-            caller2(nums2, nums1, 0, 0)
+            caller2(nums1, nums2, 0, 0);
+            caller2(nums2, nums1, 0, 0);
 
             for(int i=0;i<n;i++){
-                newVal = caller2(nums1, nums2, 0, 0)
+                newVal = caller2(nums1, nums2, 0, 0);
                 if(newVal){
                     count1=count1+1;
                 }

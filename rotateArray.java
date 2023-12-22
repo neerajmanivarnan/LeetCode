@@ -1,4 +1,13 @@
+import java.util.Arrays;
 import java.util.Stack;
+
+/* 0,1,2,3,4,5,6
+ * 1,2,3,4,5,6,7
+ * 
+ * 
+ * 
+ * 
+ */
 
 class rotateArray {
 
@@ -6,30 +15,37 @@ class rotateArray {
         int[] arr= {1,2,3,4,5,6,7};
         rotate(arr,3);
         for(int i=0;i<arr.length;i++){
-            System.out.println(arr[i]);
+            System.out.println(arr[i] +":"+ i);
         }
     }
 
     public static void rotate(int[] nums, int k) {
-        Stack<Integer> s1 = new Stack<>();
-        int len = nums.length;
-        int start=len-k;
-        int org = start;
+        int startIndex = nums.length-k;
+        int[] newArr2 = new int[k];
+        int[] newArr1 = new int[nums.length-k];
 
-        while(start<len){
-            s1.push(nums[start]);
-            start=start+1;
+        
+        
+
+        for(int i=startIndex,j=0;i<nums.length;i++,j++){
+            
+            newArr2[j] = nums[i];
         }
-        int i=0;
-        while(i<org){
-            s1.push(nums[i]);
-            i=i+1;
+         
+
+        for(int i=0,j=0;i<startIndex;i++,j++){
+            newArr1[j] = nums[i];
         }
-        int j=nums.length-1;
-        System.out.println("j value is "+j);
-        while(j>=0){
-            nums[j] = s1.pop();
-            j=j-1;
+
+         
+
+        for(int i=0;i<newArr2.length;i++){
+            nums[i] = newArr2[i];
+        }
+
+        for(int i=startIndex-1,j=0;i<nums.length;i++,j++){
+            
+            nums[i] = newArr1[j];
         }
 
 
