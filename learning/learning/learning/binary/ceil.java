@@ -3,28 +3,31 @@ package learning.learning.binary;
 public class ceil {
     
     public static void main(String[] args) {
-        int[] arr = {2,3,4,5,14,16,17,18};
-        System.out.println(ceiling(arr, 1));
+        char[] letters = {'c','f','j'};
+        //System.out.println(ceiling(letters, 1));
 
-        System.out.println("Floor is "+floor(arr, 15));
+        //System.out.println("Floor is "+floor(letters, 15));
+
+        //System.out.println(nextGreatestLetter(letters,'a'));
     }
 
 
+    
 
-    public static int ceiling(int[] arr,int target){
+    public static int ceiling(int[] letters,int target){
         int start = 0;
-        int end = arr.length-1;
+        int end = letters.length-1;
         int mid ;
         int num =-1;
 
         while(start<=end){
             mid  = (start+end)/2;
-            if(arr[mid] >= target){
-                num = arr[mid];
+            if(letters[mid] >= target){
+                num = letters[mid];
                 end=mid-1;
                 continue;
             }
-            if(target>arr[mid]){
+            if(target>letters[mid]){
                 start=mid+1;
             }else{
                 end=mid-1;
@@ -35,23 +38,23 @@ public class ceil {
 
     } 
 
-    public static int floor(int[] arr,int target){
+    public static int floor(int[] letters,int target){
         int start = 0;
-        int end = arr.length-1;
+        int end = letters.length-1;
         int mid ;
         int num =-1;
 
         while(start<=end){
             mid  = (start+end)/2;
-            if(arr[mid] <= target){
-                num = arr[mid];
-                end=mid+1;
+            if(letters[mid] <= target){
+                num = letters[mid];
+                end=mid-1;
                 continue;
             }
-            if(target>arr[mid]){
-                end=mid-1;
-            }else{
+            if(target>letters[mid]){
                 start=mid+1;
+            }else{
+                end=mid-1;
             }
         }
 
@@ -60,3 +63,7 @@ public class ceil {
     } 
 
 }
+
+
+
+
