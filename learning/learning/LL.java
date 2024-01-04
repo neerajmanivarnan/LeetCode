@@ -26,6 +26,11 @@ public class LL{
 
     }
 
+    public void sort(){
+        Node current = head;
+        
+    }
+
     public void insertFirst(int val){
        Node node = new Node(val);
     //    node.next = head;
