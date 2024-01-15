@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.Stack;
-
 /* 0,1,2,3,4,5,6
  * 1,2,3,4,5,6,7
  * 
@@ -20,33 +17,43 @@ class rotateArray {
     }
 
     public static void rotate(int[] nums, int k) {
-        int startIndex = nums.length-k;
-        int[] newArr2 = new int[k];
-        int[] newArr1 = new int[nums.length-k];
+        int size = nums.length;
+        k = k%(size);
+        int left = 0;
+        int right = nums.length-1;
+        int temp;
 
-        
-        
 
-        for(int i=startIndex,j=0;i<nums.length;i++,j++){
-            
-            newArr2[j] = nums[i];
-        }
-         
-
-        for(int i=0,j=0;i<startIndex;i++,j++){
-            newArr1[j] = nums[i];
+        while(left<right){
+            temp = nums[right];
+            nums[right] = nums[left];
+            nums[left] = temp;
+            left++;
+            right--;
         }
 
-         
+        left = 0;
+        right = k-1;
 
-        for(int i=0;i<newArr2.length;i++){
-            nums[i] = newArr2[i];
+        while(left<right){
+            temp = nums[right];
+            nums[right] = nums[left];
+            nums[left] = temp;
+            left++;
+            right--;
         }
 
-        for(int i=startIndex-1,j=0;i<nums.length;i++,j++){
-            
-            nums[i] = newArr1[j];
+        left = k;
+        right = nums.length-1;
+
+        while(left<right){
+            temp = nums[right];
+            nums[right] = nums[left];
+            nums[left] = temp;
+            left++;
+            right--;
         }
+
 
 
     }
