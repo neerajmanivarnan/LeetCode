@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 public class LLRemoveSorted {
     
 }
@@ -17,25 +15,31 @@ public class LLRemoveSorted {
  
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        HashMap<Integer,Integer> newMap = new HashMap<>();
+        ListNode current= head;
+        ListNode prev= head;
 
-        int NewCount = 0;
-
-
-        ListNode current = head;
-        while(current!= null){
-            if(newMap.containsKey(current.val)){
-                int count = newMap.get(current.val);
-                count = count+1;
-                newMap.put(current.val, count);
+        while(current!=null){
+            if(current == prev){
+                current = current.next;
+                if(current.val  == prev.val){
+                    current = current.next;
+                    prev = prev.next;
+                    head = prev;
+                }else{
+                    current = current.next;
+                    prev = prev.next;
+                }
             }else{
-                newMap.put(current.val, 0);
+                if(current.val == prev.val){
+                    prev.next = current.next;
+                    current = current.next;
+                }else{
+                    prev = prev.next;
+                    current=current.next;
+                }
             }
-
-            current = current.next;
         }
-        
 
-        
+        return head;
     }
 }
